@@ -26,7 +26,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "http://hypnos91.github.io/nomflix",
+  "homepage": "https://friendly-edison-0c8f93.netlify.com",
   "browserslist": {
     "production": [
       ">0.2%",
