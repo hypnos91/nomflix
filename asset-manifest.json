@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/nomflix/static/js/main.8e29cedf.chunk.js",
+    "main.js.map": "/nomflix/static/js/main.8e29cedf.chunk.js.map",
+    "runtime~main.js": "/nomflix/static/js/runtime~main.963d735e.js",
+    "runtime~main.js.map": "/nomflix/static/js/runtime~main.963d735e.js.map",
+    "static/js/2.78959173.chunk.js": "/nomflix/static/js/2.78959173.chunk.js",
+    "static/js/2.78959173.chunk.js.map": "/nomflix/static/js/2.78959173.chunk.js.map",
+    "index.html": "/nomflix/index.html",
+    "precache-manifest.76ffb7891c4a27f33bf1be6716fd7d1d.js": "/nomflix/precache-manifest.76ffb7891c4a27f33bf1be6716fd7d1d.js",
+    "service-worker.js": "/nomflix/service-worker.js",
+    "static/media/imdb_logo.png": "/nomflix/static/media/imdb_logo.f7f2904f.png"
+  }
+}
