@@ -8,18 +8,18 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Text = styled.span`
+const Video = styled.span`
   color: ${props => props.color};
 `;
 
-const Message = ({ text, color }) => (
+const Message = ({ video }) => (
   <Container>
-    <Text color={color}>{text}</Text>
+    <Video>{video}</Video>
   </Container>
 );
 
 Message.propTypes = {
-  text: PropTypes.string.isRequired,
+  video: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired
 };
 

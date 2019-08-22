@@ -68,7 +68,34 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ result, loading, error }) =>
+// const LinkContainer = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   margin-top: 20px;
+// `;
+
+// const ItemYoutube = styled.div`
+//   & svg {
+//     fill: white;
+//     &:hover {
+//       fill: red;
+//     }
+//   }
+// `;
+
+const Imdb = styled.a`
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  top: 6px;
+  width: 40px;
+  height: 20px;
+  background-image: url(${props => props.src});
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
+const DetailPresenter = ({ result, loading, error, pathname }) =>
   loading ? (
     <>
       <Helmet>
@@ -122,7 +149,15 @@ const DetailPresenter = ({ result, loading, error }) =>
                     : `${genre.name}/`
                 )}
             </Item>
+
+            <Imdb
+              href={`https://www.imdb.com/title/${result.imdb_id}`}
+              target={"_blank"}
+              rel={"noopener noreferrer"}
+              src={require("../../assets/imdb_logo.png")}
+            />
           </ItemContainer>
+
           <Overview>{result.overview}</Overview>
         </Data>
       </Content>

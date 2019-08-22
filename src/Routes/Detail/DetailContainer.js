@@ -32,8 +32,17 @@ export default class extends React.Component {
     try {
       if (isMovie) {
         ({ data: result } = await moviesApi.movieDetail(parsedId));
+        if (result.runtime === null || result.runtime === undefined) {
+          result.runtime = "?";
+        }
       } else {
         ({ data: result } = await tvApi.showDetail(parsedId));
+        if (
+          result.episode_run_time === null ||
+          result.episode_run_time[0] === undefined
+        ) {
+          result.episode_run_time = ["?"];
+        }
       }
     } catch {
       this.setState({ error: "Can't find anything." });
@@ -44,6 +53,16 @@ export default class extends React.Component {
 
   render() {
     const { result, error, loading } = this.state;
-    return <DetailPresenter result={result} error={error} loading={loading} />;
+    const {
+      location: { pathname }
+    } = this.props;
+    return (
+      <DetailPresenter
+        result={result}
+        error={error}
+        loading={loading}
+        pathname={pathname}
+      />
+    );
   }
 }
