@@ -1,13 +1,4 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
-
-const globalStyles = createGlobalStyle`
-    ${reset};
-body {
-    
-    @import url('https://fonts.googleapis.com/css?family=Livvic:400,600,800&display=swap');
-}
-    html, body, div, span, applet, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -68,17 +59,41 @@ input, textarea, select {
   text-rendering: optimizeLegibility;
 }
 
+@font-face {
+    font-family: Syne;
+    font-weight: 900;
+    src: url(syne-extra.otf);
+}
 
-    a{
-        text-decoration:none;
-        color:inherit;
-    }
-    body{
-        
-        font-family: 'Livvic', sans-serif;
-        background-color:rgba(20,20,20,1);
-        color: white;
-    }
-`;
+body {
+    font-family: Syne;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.25;
 
-export default globalStyles;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    position: fixed;
+    top: 48px;
+    left: 48px;
+    z-index: 1;
+}
+
+a {
+    position: fixed;
+    top: 48px;
+    right: 48px;
+    color: white;
+    text-decoration: none;
+}
+
+h1, a {
+    mix-blend-mode: difference;
+}
+
+canvas {
+    vertical-align: bottom;
+}

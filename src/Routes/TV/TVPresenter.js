@@ -8,7 +8,8 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-  padding: 0 20px;
+  padding-top: 120px;
+  padding-left: 20px;
 `;
 
 const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => (
