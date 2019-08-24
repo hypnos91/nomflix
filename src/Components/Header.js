@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const Header = styled.header`
   color: white;
-  background-color: rgba(20, 20, 20, 1);
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +14,7 @@ const Header = styled.header`
   justify-content: center;
   padding: 0px 10px;
   z-index: 10;
-  box-shadow: 0px 10px 20px 10px rgba(20, 20, 20, 1);
+  /* box-shadow: 0px 10px 20px 10px rgba(20, 20, 20, 1); */
 `;
 
 const List = styled.ul`
