@@ -34,6 +34,9 @@ const Item = styled.li`
   &:nth-child(2){
     margin: 0 5vw;
   }
+  &:hover {
+    color: #fff;
+  }
 `;
 
 const SLink = styled(Link)`

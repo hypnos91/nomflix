@@ -116,7 +116,7 @@ const Divider = styled.span`
   margin: 0 10px;
 `;
 
-const Overview = styled.p`
+const Overview = styled.div`
   word-break: keep-all;
   margin: 20px;
   font-size: 2rem;
