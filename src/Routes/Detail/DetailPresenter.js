@@ -75,7 +75,7 @@ const Data = styled.div`
   }
 
   @media (max-width: 1000px) {
-    top: 90vh;
+    top: 40rem;
     width: 80%;
     height: auto;
   }
@@ -108,6 +108,7 @@ const ItemContainer = styled.div`
 const Item = styled.span``;
 
 const BackIconContainer = styled.div`
+  display: none;
   fill: white;
 `;
 
