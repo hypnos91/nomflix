@@ -49,7 +49,6 @@ const Cover = styled.div`
   background-repeat: no-repeat;
   min-height: 12rem;
   max-height: 30rem;
-  height: 100%;
   border-radius: 5px;
   opacity: 1;
   z-index: -1;
@@ -81,6 +80,7 @@ const Data = styled.div`
   }
 
   @media (max-width: 400px) {
+    right: 0;
     width: 90%;
     left: 20px;
   }
@@ -104,7 +104,6 @@ const Title = styled.div`
 const ItemContainer = styled.div`
   margin: 20px 20px 20px;
 `;
-
 const Item = styled.span``;
 
 const BackIconContainer = styled.div`
@@ -207,7 +206,7 @@ const DetailPresenter = ({ result, loading, error, pathname }) =>
               result.genres.map((genre, index) =>
                 index === result.genres.length - 1
                   ? genre.name
-                  : `${genre.name}/`
+                  : `${genre.name} / `
               )}
           </Item>
 
