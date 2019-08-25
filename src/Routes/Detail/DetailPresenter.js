@@ -143,16 +143,27 @@ const Overview = styled.div`
 //   }
 // `;
 
+const MediaIcon = styled.div`
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: inherit;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+`;
+
 const Imdb = styled.a`
-  margin-left: 10px;
   display: inline-block;
   position: relative;
-  top: 6px;
   width: 40px;
   height: 20px;
   background-image: url(${props => props.src});
   background-size: contain;
   background-repeat: no-repeat;
+  @media (max-width: 1000px) {
+  }
 `;
 
 const DetailPresenter = ({ result, loading, error, pathname }) =>
@@ -179,6 +190,15 @@ const DetailPresenter = ({ result, loading, error, pathname }) =>
       <Title>
         {result.original_title ? result.original_title : result.original_name}
       </Title>
+      <MediaIcon>
+        <Imdb
+          href={`https://www.imdb.com/title/${result.imdb_id}`}
+          target={"_blank"}
+          rel={"noopener noreferrer"}
+          src={require("../../assets/imdb_logo.png")}
+        />
+      </MediaIcon>
+
       <BackIconContainer>
         <BackIcon />
       </BackIconContainer>
@@ -200,7 +220,9 @@ const DetailPresenter = ({ result, loading, error, pathname }) =>
           <Item>
             {result.runtime ? result.runtime : result.episode_run_time[0]} min
           </Item>
-          <Divider>·</Divider>
+          <Divider>
+            <br></br>
+          </Divider>
           <Item>
             {result.genres &&
               result.genres.map((genre, index) =>
@@ -209,13 +231,6 @@ const DetailPresenter = ({ result, loading, error, pathname }) =>
                   : `${genre.name} / `
               )}
           </Item>
-
-          <Imdb
-            href={`https://www.imdb.com/title/${result.imdb_id}`}
-            target={"_blank"}
-            rel={"noopener noreferrer"}
-            src={require("../../assets/imdb_logo.png")}
-          />
         </ItemContainer>
 
         <Overview>
