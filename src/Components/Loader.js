@@ -27,8 +27,8 @@ const Loader = styled.div`
   height: 20vmin;
   width: 20vmin;
   border-radius: 50%;
-  border: 1vmin solid #576ca8;
-  border-top-color: #274690;
+  border: 1vmin solid #ec283f;
+  border-top-color: pink;
   animation: ${Spin} 2s infinite linear;
 `;
 

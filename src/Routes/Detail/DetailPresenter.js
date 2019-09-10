@@ -90,10 +90,11 @@ const Cover = styled.img`
 const Title = styled.div`
   margin-top: 5rem;
   width: 400px;
-  font-size: 4vw;
+  font-size: 3.5vw;
   font-weight: 800;
   margin-bottom: 2rem;
-  word-break: keep-all;
+  word-break: normal;
+  word-wrap: break-word;
   @media (max-width: 1100px) {
     margin-top: 0;
     width: auto;
