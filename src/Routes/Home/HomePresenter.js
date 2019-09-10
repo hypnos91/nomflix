@@ -9,7 +9,7 @@ import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding-top: 120px;
-  padding-left: 20px;
+  padding-left: 50px;
 `;
 
 const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) => (

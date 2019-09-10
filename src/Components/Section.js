@@ -9,14 +9,14 @@ const Container = styled.div`
 `;
 
 const Title = styled.span`
-  font-size: 14px;
+  font-size: 2rem;
   font-weight: 600;
 `;
 
 const Grid = styled.div`
   margin-top: 25px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 125px);
+  grid-template-columns: repeat(auto-fit, minmax(125px, 180px));
   grid-gap: 25px;
 `;
 

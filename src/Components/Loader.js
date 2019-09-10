@@ -15,7 +15,7 @@ const Container = styled.div`
   width: 100%;
   position: absolute;
   overflow: hidden;
-  background-color: rgba(20, 20, 20, 1);
+  background-color: white;
 `;
 
 const Loader = styled.div`

@@ -7,12 +7,8 @@ const Container = styled.div`
   font-size: 12px;
 `;
 
-const Image = styled.div`
-  background-image: url(${props => props.bgUrl});
-  height: 180px;
-  background-size: cover;
-  border-radius: 4px;
-  background-position: center center;
+const Image = styled.img`
+  width: 100%;
   transition: opacity 0.2s linear;
 `;
 
@@ -25,6 +21,7 @@ const Rating = styled.span`
 `;
 
 const ImageContainer = styled.div`
+  max-width: 180px;
   margin-bottom: 5px;
   position: relative;
   &:hover {
@@ -52,7 +49,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
     <Container>
       <ImageContainer>
         <Image
-          bgUrl={
+          src={
             imageUrl
               ? `https://image.tmdb.org/t/p/w300${imageUrl}`
               : require("../assets/noPosterSmall.png")

@@ -74,8 +74,8 @@ input, textarea, select {
     body{
         
         font-family: 'Livvic', sans-serif;
-        background-color:rgba(20,20,20,1);
-        color: white;
+        background-color:white;
+        color: black;
     }
 `;
 

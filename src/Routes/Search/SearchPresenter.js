@@ -9,7 +9,12 @@ import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding-top: 120px;
-  padding-left: 20px;
+  padding-left: 50px;
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+  align-content: center;
 `;
 
 const Form = styled.form`
@@ -20,6 +25,7 @@ const Form = styled.form`
 const Input = styled.input`
   all: unset;
   font-size: 28px;
+  text-align: center;
   width: 100%;
 `;
 
@@ -36,13 +42,15 @@ const SearchPresenter = ({
     <Helmet>
       <title>Search | Nomflix</title>
     </Helmet>
-    <Form onSubmit={handleSubmit}>
-      <Input
-        placeholder="Search Movies or TV Show..."
-        value={searchTerm}
-        onChange={updateTerm}
-      />
-    </Form>
+    <FormContainer>
+      <Form onSubmit={handleSubmit}>
+        <Input
+          placeholder="Search Movies or TV Show..."
+          value={searchTerm}
+          onChange={updateTerm}
+        />
+      </Form>
+    </FormContainer>
     {loading ? (
       <Loader />
     ) : (
