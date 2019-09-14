@@ -8,27 +8,34 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.span`
   font-size: 2rem;
-  margin-bottom: 1rem;
   font-weight: 600;
 `;
 
 const Grid = styled.div`
-  width: 100%;
+  margin: 25px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 200px);
+  }
 `;
 
-const Section = ({ title, children }) => (
+const SectionBig = ({ title, children }) => (
   <Container>
     <Title>{title}</Title>
     <Grid>{children}</Grid>
   </Container>
 );
 
-Section.propTypes = {
+SectionBig.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -36,4 +43,4 @@ Section.propTypes = {
   ])
 };
 
-export default Section;
+export default SectionBig;

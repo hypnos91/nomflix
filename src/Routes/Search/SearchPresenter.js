@@ -8,10 +8,12 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-  padding-top: 120px;
-  padding-left: 50px;
+  padding-top: 80px;
+  margin: 0 50px;
+  @media (max-width: 820px) {
+    margin: 0 20px;
+  }
 `;
-
 const FormContainer = styled.div`
   display: flex;
   align-content: center;
@@ -27,6 +29,9 @@ const Input = styled.input`
   font-size: 28px;
   text-align: center;
   width: 100%;
+  @media (max-width: 400px) {
+    font-size: 1rem;
+  }
 `;
 
 const SearchPresenter = ({

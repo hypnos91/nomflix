@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
+  display: grid;
   font-size: 12px;
 `;
 
@@ -21,8 +22,8 @@ const Rating = styled.span`
 `;
 
 const ImageContainer = styled.div`
-  width: 100%;
-  margin-bottom: 5px;
+  overflow: hidden;
+  height: 100%;
   position: relative;
   &:hover {
     ${Image} {
@@ -32,29 +33,28 @@ const ImageContainer = styled.div`
       opacity: 1;
     }
   }
+  @media (max-width: 600px) {
+    height: 160px;
+  }
 `;
 
 const Title = styled.span`
+  font-size: 1rem;
   display: block;
+  margin-top: 10px;
   margin-bottom: 3px;
 `;
 
 const Year = styled.span`
   font-size: 10px;
-  color: rgba(0, 0, 0, 0.4);
+  color: black;
 `;
 
-const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
+const Highlight = ({ id, backdrop, title, rating, year, isMovie = false }) => (
   <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
     <Container>
       <ImageContainer>
-        <Image
-          src={
-            imageUrl
-              ? `https://image.tmdb.org/t/p/w300${imageUrl}`
-              : require("../assets/noPosterSmall.png")
-          }
-        />
+        <Image src={`https://image.tmdb.org/t/p/original/${backdrop}`} />
         <Rating>
           <span role="img" aria-label="rating">
             ⭐
@@ -64,20 +64,20 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
         </Rating>
       </ImageContainer>
       <Title>
-        {title.length > 18 ? `${title.substring(0, 15)}...` : title}
+        {title.length > 18 ? `${title.substring(0, 50)}...` : title}
       </Title>
       <Year>{year}</Year>
     </Container>
   </Link>
 );
 
-Poster.protoType = {
+Highlight.protoType = {
   id: PropTypes.number.isRequired,
-  imageUrl: PropTypes.string,
+  backdrop_path: PropTypes.string,
   title: PropTypes.string.isRequired,
   rating: PropTypes.number,
   year: PropTypes.string,
   isMovie: PropTypes.bool
 };
 
-export default Poster;
+export default Highlight;
